@@ -1,0 +1,68 @@
+<nav class="nav" role="navigation">
+ <button class="menu-button" aria-label="Open navigation menu" aria-expanded="false" aria-haspopup="true"
+ aria-controls="menu">
+ <span class="menu-bar" aria-hidden="true"></span>
+ <span class="menu-bar" aria-hidden="true"></span>
+ <span class="menu-bar" aria-hidden="true"></span>
+ <span class="sr-only">Menu</span>
+</button>
+
+ <a href="./" class="nav__logo logo">
+  <img src="img/icons/logo.svg" alt="Logo of the website" class="logo__img">
+ </a>
+
+ <div class="nav__popup" id="menu">
+  <ul class="nav__list">
+   <li class="nav__item">
+    <a href="#" class="nav__link">About</a>
+   </li>
+   <li class="nav__item">
+    <a href="#" class="nav__link">Catalogue</a>
+   </li>
+   <li class="nav__item">
+    <a href="#" class="nav__link">Chef’s blog</a>
+   </li>
+   <li class="nav__item">
+    <a href="#" class="nav__link">Shipping & returns</a>
+   </li>
+   <li class="nav__item">
+    <a href="#" class="nav__link">Support</a>
+   </li>
+   <li class="nav__item">
+    <a href="#" class="nav__link">Contact us</a>
+   </li>
+  </ul>
+  <ul class="navbar">
+   <li class="navbar__item">
+    <button class="navbar__btn navbar__btn--search" type="button">
+     @@include("../bem-blocks/_sprite.html",{"class": "navbar__svg","id": "sprite--search"})
+    </button>
+   </li>
+   <li class="navbar__item">
+    <button class="navbar__btn navbar__btn--favorites" type="button">
+     @@include("../bem-blocks/_sprite.html",{"class": "navbar__svg","id": "sprite--favorite"})
+    </button>
+   </li>
+   <li class="navbar__item">
+    <button class="navbar__btn navbar__btn--profile" type="button">
+     @@include("../bem-blocks/_sprite.html",{"class": "navbar__svg","id": "sprite--profile"})
+    </button>
+   </li>
+   <li class="navbar__item">
+    <button class="navbar__btn navbar__btn--cart" type="button">
+     @@include("../bem-blocks/_sprite.html",{"class": "navbar__svg","id": "sprite--cart"})
+    </button>
+   </li>
+  </ul>
+
+ </div>
+
+ <!-- <form action="" class="nav__form form-nav">
+  <input type="search" class="form-nav__input">
+  <button type="button" class="form-nav__btn no-btn">
+   @@include("../bem-blocks/_sprite.html",{"class": "navbar__svg","id": "sprite--search"})
+  </button>
+ </form> -->
+
+
+</nav>

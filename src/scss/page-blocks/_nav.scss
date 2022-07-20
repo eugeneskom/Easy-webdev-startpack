@@ -1,0 +1,158 @@
+.nav {
+ padding: 40px 5px;
+
+ @include rmin($r-md) {
+  display: flex;
+  align-items: center;
+ }
+
+ &__logo {
+  flex: 1 0 auto;
+ }
+
+ &__popup {
+  position: absolute;
+  background-color: #000;
+  top: 100%;
+  left: 0;
+  width: 100vw;
+
+  @include rmin($r-md) {
+   display: flex;
+   align-items: center;
+   justify-content: space-between;
+   flex: 2 0 auto;
+  }
+ }
+
+ &__list {
+  @include rmin($r-lg) {
+   display: flex;
+  }
+ }
+
+ &__item {
+  &:not(:last-child) {
+   @include rmin($r-md) {
+    margin-right: 28px;
+   }
+  }
+ }
+
+
+ &__link {
+  text-transform: uppercase;
+  color: $text-header;
+  display: block;
+  text-align: center;
+  padding: 10px 0;
+  @include font-size(0.8, 1);
+
+  &:hover {
+   color: $text-header-hover;
+  }
+ }
+
+}
+
+.js .nav {
+ &__popup {
+  max-height: 0px;
+  overflow: hidden;
+  transition: all 0.3s ease-in;
+
+  @include rmin($r-lg) {
+   display: flex;
+   max-height: max-content;
+  }
+
+  &.open {
+   max-height: 1000px;
+
+   .nav {
+    &__list {
+     text-align: center;
+    }
+   }
+  }
+ }
+}
+
+.navbar {
+ @include rmin($r-md) {
+  display: flex;
+ }
+
+ &__btn,
+ &__svg {
+  width: 24px;
+  height: 24px;
+ }
+
+ &__btn {
+  @include no-btn;
+ }
+
+ &__svg {
+  width: 100%;
+ }
+
+
+}
+
+
+
+// Hamburger Menu button to toggle menu display
+.menu-button {
+ // Don't want button to look like a button
+ border: none;
+ padding: 4px 5px;
+ background: transparent;
+ display: none;
+ // place in upper right corner
+ position: absolute;
+ right: 25px;
+ top: 35px;
+ z-index: 10;
+
+ // Don't show menu button on large screens
+
+ @include rmin($r-lg) {
+  display: none;
+ }
+
+ // When open, change button to an X for closing menu 
+ &.open {
+  span:first-child {
+   transform: rotate(45deg) translate(8px, 8px);
+  }
+
+  span:nth-child(2) {
+   display: none;
+  }
+
+  span:nth-child(3) {
+   transform: rotate(-45deg);
+  }
+ }
+}
+
+.js .menu-button {
+ display: block;
+
+ @include rmin($r-lg) {
+  display: none;
+ }
+}
+
+// 'hamburger' bars
+.menu-bar {
+ display: block;
+ width: 35px;
+ height: 4px;
+ background-color: white;
+ border-radius: 2px;
+ margin: 6px 0;
+ transition: transform 0.2s;
+
+}

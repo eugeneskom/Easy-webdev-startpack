@@ -1,60 +1,113 @@
 @mixin font-face($name, $file, $weight: 400, $style: normal) {
-	@font-face {
-		font-family: "#{$name}";
-		src: local("#{$file}"),
-		url('../fonts/#{$file}.woff2') format('woff2'),
-		url('../fonts/#{$file}.woff') format('woff');
-		font-weight: $weight;
-		font-style: $style;
-		font-display: swap;
-	}
+ @font-face {
+  font-family: "#{$name}";
+  src: local("#{$file}"),
+  url('../fonts/#{$file}.woff2') format('woff2'),
+  url('../fonts/#{$file}.woff') format('woff');
+  font-weight: $weight;
+  font-style: $style;
+  font-display: swap;
+ }
 }
 
 @mixin bg ($size:"contain", $position: "center") {
-	background-size: #{$size};
-	background-position: #{$position};
-	background-repeat: no-repeat;
+ background-size: #{$size};
+ background-position: #{$position};
+ background-repeat: no-repeat;
+}
+
+@mixin bg-contain {
+ background-repeat: no-repeat;
+ background-size: contain;
+ background-position: center;
 }
 
 @mixin btn_anim($scaleMax:1.05, $scaleMin:0.95) {
-	transform-origin: center center;
-	transition: all ease-out 240ms;
+ transform-origin: center center;
+ transition: all ease-out 240ms;
 
-	&:hover {
-		transform: scale(#{$scaleMax});
-	}
+ &:hover {
+  transform: scale(#{$scaleMax});
+ }
 
-	&:focus {
-		outline: transparent;
-	}
+ &:focus {
+  outline: transparent;
+ }
 
-	&:focus-visible {
-		transform: scale(#{$scaleMax}) translateY(-5%);
-	}
+ &:focus-visible {
+  transform: scale(#{$scaleMax}) translateY(-5%);
+ }
 
-	&:active {
-		transform: scale(#{$scaleMin});
-	}
+ &:active {
+  transform: scale(#{$scaleMin});
+ }
 }
 
 @mixin no-btn ($display:"inline-block") {
-	padding: 0;
-	margin: 0;
-	border: 0;
-	background-color: transparent;
-	border-radius: 0;
-	cursor: pointer;
-	appearance: none;
-	display: #{$display};
+ padding: 0;
+ margin: 0;
+ border: 0;
+ background-color: transparent;
+ border-radius: 0;
+ cursor: pointer;
+ appearance: none;
+ display: #{$display};
 }
 
 @mixin transit ($tr:0.24) {
-	transition: all #{$tr}s;
+ transition: all #{$tr}s;
 }
 
 @mixin container($max-width:"120rem", $padding:"2rem") {
-	width: 100%;
-	max-width: #{$max-width};
-	padding: 0 #{$padding};
-	margin: 0 auto;
+ width: 100%;
+ max-width: #{$max-width};
+ padding: 0 #{$padding};
+ margin: 0 auto;
+}
+
+
+// settings fluid typography mixin
+$remBase: 16; //set base font size. unitless value in pixels.
+$widthMin: 360; //set small breakpoint. unitless value in pixels.
+$widthMax: 1024; //set large breakpoint. unitless value in pixels.
+
+@mixin font-size($valueMin, $valueMax) {
+  // turn mixin parameters into rem value.
+  $fontMin: $valueMin * $remBase;
+  $fontMax: $valueMax * $remBase;
+	
+  // set minimum font size. give it rem value.
+  font-size: $valueMin * 1rem;
+	
+  // set font size between min and max breakpoints.
+  @media (min-width: #{$widthMin}px) {
+    font-size: calc( #{$fontMin}px + (#{$fontMax} - #{$fontMin}) * ((100vw - #{$widthMin}px) / (#{$widthMax} - #{$widthMin})));
+  }
+
+  // set font size above max breakpoint
+  @media (min-width: #{$widthMax}px) {
+    font-size: $valueMax * 1rem;
+  }
+}
+
+
+/* Center Block
+-------------------------*/
+@mixin center-block {
+ display: block;
+ margin-left: auto;
+ margin-right: auto;
+}
+
+
+@mixin r($width) {
+ @media only screen and (max-width: $width+ "px") {
+  @content;
+ }
+}
+
+@mixin rmin($width) {
+ @media only screen and (min-width: $width+ 1 + "px") {
+  @content;
+ }
 }
