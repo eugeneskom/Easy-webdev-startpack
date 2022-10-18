@@ -1,0 +1,292 @@
+@mixin font-face($name, $file, $weight: 400, $style: normal) {
+ @font-face {
+  font-family: "#{$name}";
+  src: local("#{$file}"),
+  url('../fonts/#{$file}.woff2') format('woff2'),
+  url('../fonts/#{$file}.woff') format('woff');
+  font-weight: $weight;
+  font-style: $style;
+  font-display: swap;
+ }
+}
+
+@mixin mon-semi {
+ font-family: Montserrat-SemiBold, sans-serif;
+ font-weight: 600;
+}
+
+@mixin mon-medium {
+ font-family: Montserrat-Medium, sans-serif;
+ font-weight: 500;
+}
+
+@mixin mon-bold {
+ font-family: Montserrat-Bold, sans-serif;
+ font-weight: 700;
+}
+
+.header {
+ padding: 10px 0;
+ background-image: url('../img/header-bg.svg');
+ background-repeat: no-repeat;
+ background-size: cover;
+
+ &__inner {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+ }
+}
+
+.e-ticket {
+padding-top: 20px;
+ .col {
+  display: flex;
+  flex-direction: column;
+
+  &:not(:last-child) {
+   margin-right: 20px;
+  }
+ }
+
+
+ &__top {
+  margin-bottom: 30px;
+ }
+
+ &__heading {
+  @include mon-semi;
+  font-size: 14px;
+ }
+
+ &__gray {
+  @include mon-medium;
+  color: #828282;
+ }
+
+ &__bold {
+  padding-top: 5px;
+  font-size: 12px;
+  margin-top: auto;
+ }
+
+ &__bottom {
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+ }
+
+ &__booking-ref {
+  width: 98px;
+ }
+
+ &__online-ref {
+  width: 210px;
+ }
+
+ &__iin {
+  width: 80px;
+ }
+
+ &__iata {
+  width: 55px;
+ }
+
+
+
+ img {
+  margin-top: 10px;
+  margin-bottom: 15px;
+ }
+
+ p {
+  @include mon-medium;
+ }
+}
+
+p {
+ @include mon-medium;
+}
+
+.bold {
+ padding-top: 5px;
+ font-size: 9px;
+ @include mon-semi;
+}
+
+.col {
+ display: flex;
+ flex-direction: column;
+
+ .bold {
+  margin-top: auto;
+ }
+}
+
+.flight-data {
+ &__title {
+  margin-bottom: 5px;
+  font-size: 10px;
+  @include mon-semi;
+ }
+
+ &__top {
+  display: flex;
+  margin-bottom: 20px;
+  justify-content: space-between;
+
+  p {
+   @include mon-medium;
+
+  }
+
+  .bold {
+   font-size: 9px;
+   @include mon-semi;
+  }
+
+  .col {
+
+   &:not(:last-child) {
+    margin-right: 20px;
+   }
+
+  }
+
+  .first {
+   width: 120px;
+  }
+
+  .second {
+   width: 150px;
+  }
+
+  .third {
+   width: 126px;
+  }
+
+  .fourth {
+   width: 100px;
+  }
+ }
+
+ &__bottom {
+  display: flex;
+  margin-bottom: 25px;
+
+  .first {
+   width: 120px;
+  }
+
+  .second {
+   width: 150px;
+  }
+
+  .third {
+   width: 128px;
+  }
+
+  .col {
+
+   &:not(:last-child) {
+    margin-right: 20px;
+   }
+
+  }
+
+
+ }
+}
+
+.details {
+ &__top {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 25px;
+  .col {
+
+   &:not(:last-child) {
+    margin-right: 20px;
+   }
+
+  }
+  .first {
+   width: 120px;
+  }
+
+  .second {
+   width: 140px;
+  }
+
+  .third {
+   width: 80px;
+  }
+
+  .fourth {
+   width: 80px;
+  }
+
+  .fifth {
+   width: 80px;
+  }
+ }
+ &__middle{
+  display: flex;
+  justify-content: space-between;
+  h2{
+   font-size: 10px;
+  }
+ }
+
+ &__bottom{
+  display: flex;
+  margin-bottom: 24px;
+  .col {
+
+   &:not(:last-child) {
+    margin-right: 20px;
+   }
+
+  }
+  
+  .first {
+   width: 120px;
+  }
+
+  .second {
+   width: 140px;
+  }
+
+  .third {
+   width: 80px;
+  }
+
+  .fourth {
+   width: 80px;
+  }
+
+  .fifth {
+   width: 85px;
+  }
+ }
+}
+
+
+
+.divider{
+ width: 100%;
+}
+
+.footer{
+ background-image: url('../img/footer-bg.svg');
+ background-repeat: no-repeat;
+ background-size: cover;
+ padding: 15px 0;
+.container{
+ display: flex;
+}
+ img{
+  display: inline-block;
+  margin-right: 40px;
+ }
+}

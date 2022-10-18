@@ -10,6 +10,32 @@
  }
 }
 
+@mixin mon-semi{
+ font-family: Montserrat-SemiBold, sans-serif;
+ font-weight: 600;
+}
+
+@mixin mon-medium{
+ font-family: Montserrat-Medium, sans-serif;
+ font-weight: 500;
+}
+@mixin mon-bold{
+ font-family: Montserrat-Bold, sans-serif;
+ font-weight: 700;
+}
+
+
+
+// Positioning pseudo elements
+
+@mixin ptc{
+ content:"";
+ position: absolute;
+ bottom:0px;
+ left: 50%;
+ transform: translateX(-50%)
+}
+
 @mixin bg ($size:"contain", $position: "center") {
  background-size: #{$size};
  background-position: #{$position};

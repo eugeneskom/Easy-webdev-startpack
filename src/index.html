@@ -1,26 +1,242 @@
 <!DOCTYPE html>
 @@include('components/page-blocks/_head.html',{
 "lang":"en",
-"title":"DEISS",
-"description":"DEISS",
+"title":"loko ticket",
+"description":"loko ticket",
 "keywords":"",
-"favicon":"img/favicons/favicon",
 })
 
 <body>
- <main class="main">
-  @@include('components/page-blocks/_header.html')
-  <!-- @@include('components/radio-buttons/_radio-buttons.html') -->
-  <!-- @@include('components/radio-buttons/_checkbox.html') -->
-  <!-- @@include('components/radio-buttons/_select.html') -->
-  <!-- @@include('components/page-blocks/_swiper.html') -->
-  <!-- @@loop('components/chunks/_card.html', 'data/card.json') -->
-  <div class="container">
-  <!-- @@include('components/page-blocks/_nav.html') -->
+
+ <header class="header">
+  <div class="container header__inner">
+   <img src="img/logo-top.svg" alt="" class="header__logo">
+   <img src="img/iata.svg" alt="">
   </div>
+ </header>
+ <main class="main">
+  <section class="e-ticket">
+   <div class="container">
+
+    <div class="e-ticket__top">
+     <h2 class="e-ticket__heading">Электрондық билет <span class="e-ticket__gray">(бағыт/түбіртек)</span></h2>
+     <h2 class="e-ticket__heading">Электронный билет <span class="e-ticket__gray">(маршрут/квитанция)</span></h2>
+     <h2 class="e-ticket__heading">Electronic ticket <span class="e-ticket__gray">(itinerary/receipt)</span></h2>
+    </div>
+
+    <div class="e-ticket__bottom">
+     <div class="col e-ticket__booking-ref">
+      <p>бронның нөмірі </p>
+      <p>номер бронирования</p>
+      <p>booking reference</p>
+      <h3 class="e-ticket__bold">TSBQ3HJK</h3>
+     </div>
+     <div class="col e-ticket__online-ref">
+      <p>онлайн тіркелу үшін бронның нөмірі </p>
+      <p>номер бронирования для онлайн-регистрации</p>
+      <p>booking reference for online check-in </p>
+      <h3 class="e-ticket__bold">HJD4SRU</h3>
+     </div>
+     <div class="col e-ticket__iin">
+      <p>жсн</p>
+      <p>иин</p>
+      <h3 class="e-ticket__bold">881214561121</h3>
+     </div>
+     <div class="col e-ticket__iata">
+      <p>IATA #</p>
+      <h3 class="e-ticket__bold">65321723</h3>
+     </div>
+    </div>
+    <img class="divider" src="img/divider-1.svg" alt="">
+
+   </div>
+  </section>
+
+  <section class="flight-data">
+   <div class="container">
+    <h2 class="flight-data__title title">Сапар туралы ақпарат / Детали перелёта <br />
+     Flight data</h2>
+    <img src="img/divider-2.svg" alt="">
+
+    <div class="flight-data__top">
+     <div class="col first">
+      <p>жолаушы</p>
+      <p>пассажир</p>
+      <p>passenger</p>
+      <h3 class="bold">ARMANOV NURSULTAN</h3>
+     </div>
+     <div class="col second">
+      <p>құжаттың нөмірі</p>
+      <p>номер документа</p>
+      <p>document number</p>
+      <h3 class="bold">487595874</h3>
+     </div>
+     <div class="col third">
+      <p>валидтеуші тасымалдаушы</p>
+      <p>валидирующий перевозчик</p>
+      <p>issued by</p>
+      <h3 class="bold">AIR ASTANA</h3>
+     </div>
+     <div class="col fourth">
+      <p>билеттің нөмірі</p>
+      <p>номер билета</p>
+      <p>ticket number</p>
+      <h3 class="bold">183-2410676372</h3>
+     </div>
+    </div>
+
+    <div class="flight-data__bottom">
+     <div class="col first">
+      <p>ұшу</p>
+      <p>рейс</p>
+      <p>flight</p>
+      <h3 class="bold">2101</h3>
+     </div>
+     <div class="col second">
+      <p>ұшып шығу (жергілікті уақыт)</p>
+      <p>вылет (местное время)</p>
+      <p>departure (local time)</p>
+      <h3 class="bold">21:20 / 01 NOV 22 <br />
+       Нурсултан Назарбаев (NQZ)<br />
+       Астана
+      </h3>
+     </div>
+     <div class="col third">
+      <p>ұшып келу (жергілікті уақыт)</p>
+      <p>прилёт (местное время)</p>
+      <p>arrival (local time)</p>
+      <h3 class="bold">22:45 / 01 NOV 22<br />
+       Алма-Ата (ALA)<br />
+       Алматы
+      </h3>
+     </div>
+
+    </div>
+   </div>
+  </section>
+
+  <section class="details">
+   <div class="container">
+    <h2 class="flight-data__title title">Қосымша ақпарат / Детали<br />
+     Details</h2>
+     <img class="divider"  src="img/divider-3.svg" alt="">
+
+    <div class="details__top">
+     <div class="col first">
+      <p>ұзақтылық
+      </p>
+      <p>продолжительность
+      </p>
+      <p>flight duration</p>
+      <h3 class="bold">1:25</h3>
+     </div>
+
+     <div class="col second">
+      <p>ұшақ
+      </p>
+      <p>самолёт
+      </p>
+      <p>aircraft</p>
+      <h3 class="bold">Fokker 100</h3>
+     </div>
+     <div class="col third">
+      <p>жолжүк
+      </p>
+      <p>багаж
+      </p>
+      <p>baggage</p>
+      <h3 class="bold">-</h3>
+     </div>
+     <div class="col fourth">
+      <p>тариф
+      </p>
+      <p>тариф
+      </p>
+      <p>fare basis</p>
+      <h3 class="bold">-</h3>
+     </div>
+     <div class="col fifth">
+      <p>статусы
+      </p>
+      <p>статус
+      </p>
+      <p>status</p>
+      <h3 class="bold">Расталған<br />
+       Подтверждено<br />
+       Confirmed</h3>
+     </div>
+    </div>
+
+    <div class="details__middle">
+     <h2>Бағасын есептеу / Расчёт стоимости <br />
+      Price calculation</h2>
+     <div>
+      <h2>ЖШС / ТОО ТрейдИнтерКом
+      </h2>
+      <p>БИН 190244324972</p>
+     </div>
+    </div>
+    <img  class="divider" src="img/divider-4.svg" alt="">
+
+    <div class="details__bottom">
+     <div class="col first">
+      <p>төлем түрі
+
+      </p>
+      <p>форма оплаты
+      </p>
+      <p>method of payment</p>
+      <Online class="bold">Online</h3>
+     </div>
+
+     <div class="col second">
+      <p>тариф
+      </p>
+      <p>тариф
+
+      </p>
+      <p>fare</p>
+      <h3 class="bold">KZT</h3>
+     </div>
+     <div class="col third">
+      <p>сервистік алым </p>
+      <p>сервисный сбор </p>
+      <p>service fee</p>
+      <h3 class="bold">0.00 KZT</h3>
+     </div>
+     <div class="col fourth">
+      <p>барлығы</p>
+      <p>итого</p>
+      <p>total</p>
+      <h3 class="bold">70 000 KZT</h3>
+     </div>
+     <div class="col fifth">
+      <p>сатып алынған күн </p>
+      <p>дата покупки </p>
+      <p>date of purchase</p>
+      <h3 class="bold">18:25 /25 Oct 22 </h3>
+     </div>
+    </div>
+   </div>
+  </section>
+
  </main>
- @@include('components/page-blocks/_footer.html')
- @@include('components/page-blocks/_scripts.html')
+
+ <footer class="footer">
+<div class="container">
+ <img  src="img/logo-footer.svg" alt="" class="footer__logo">
+ <div class="footer__text">
+  <p>ЖШС "lokoplane.kz" заңды мекенжайы: Қазақстан Республикасы, Ақтөбе қаласы,<br/>
+   Астана ауданы, Әбілқайыр хан даңғылы, 27-үй. пошта индексі: 030000
+   </p>
+   <p>
+
+callcenter1@lokoplane.kz / callcenter@lokoplane.kz.<br/>
++7(707)842-01-01
+   </p>
+ </div>
+</div>
+ </footer>
 </body>
 
 </html>

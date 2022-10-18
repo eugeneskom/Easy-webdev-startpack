@@ -1,22 +1,32 @@
 html {
  box-sizing: border-box;
 }
+
 *,
 *::before,
 *::after {
-	box-sizing: inherit;
+ box-sizing: inherit;
 }
-
-
 
 html,
 body {
-	min-height: 100%;
-	position: relative;
+ min-height: 100%;
+ position: relative;
 }
 
 body {
-font-size: 16px;
+ font-size: 8px;
+ @include mon-semi;
+ line-height: 1.4;
+ color: #1A1C32;
+ background-color: #FFFFFF;
+}
+
+h2,h3{
+ color: #1A1C32;
+}
+p{
+ color:#828282;
 }
 
 ul,
@@ -29,16 +39,14 @@ h3,
 h4,
 h5,
 h6 {
-	margin: 0;
+ margin: 0;
 }
 
-li{
+li {
  list-style-type: none;
 }
 
-.no-btn{
- @include no-btn;
-}
+
 
 .sr-only {
  position: absolute;
@@ -53,9 +61,9 @@ li{
 }
 
 .container {
- max-width: 1230px;
+ max-width:600px;
  width: 100%;
  margin: 0 auto;
- padding: 0 15px;
+ padding: 0 20px;
 }
 
